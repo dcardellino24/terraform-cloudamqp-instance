@@ -1,0 +1,10 @@
+name: Test Terraform Modules with terratest
+on: push
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Terratest
+        uses: cloudposse/github.action-terratest@main
+        with:
+          sourceDir: tests
