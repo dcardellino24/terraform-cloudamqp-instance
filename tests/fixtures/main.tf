@@ -1,5 +1,7 @@
-module "certificate_manager" {
+module "cloudamqp" {
   source = "../.."
 
-  foo = "BAR"
+  name   = "Terraform Test"
+  plan   = "lemur"
+  region = "google-compute-engine::europe-west1"
 }

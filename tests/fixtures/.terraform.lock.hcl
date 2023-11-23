@@ -1,22 +1,16 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
-provider "registry.terraform.io/hashicorp/null" {
-  version     = "3.2.2"
-  constraints = ">= 3.1.1"
+provider "registry.terraform.io/cloudamqp/cloudamqp" {
+  version     = "1.28.0"
+  constraints = "~> 1.28.0"
   hashes = [
-    "h1:IMVAUHKoydFrlPrl9OzasDnw/8ntZFerCC9iXw1rXQY=",
-    "zh:3248aae6a2198f3ec8394218d05bd5e42be59f43a3a7c0b71c66ec0df08b69e7",
-    "zh:32b1aaa1c3013d33c245493f4a65465eab9436b454d250102729321a44c8ab9a",
-    "zh:38eff7e470acb48f66380a73a5c7cdd76cc9b9c9ba9a7249c7991488abe22fe3",
-    "zh:4c2f1faee67af104f5f9e711c4574ff4d298afaa8a420680b0cb55d7bbc65606",
-    "zh:544b33b757c0b954dbb87db83a5ad921edd61f02f1dc86c6186a5ea86465b546",
-    "zh:696cf785090e1e8cf1587499516b0494f47413b43cb99877ad97f5d0de3dc539",
-    "zh:6e301f34757b5d265ae44467d95306d61bef5e41930be1365f5a8dcf80f59452",
-    "zh:78d5eefdd9e494defcb3c68d282b8f96630502cac21d1ea161f53cfe9bb483b3",
-    "zh:913a929070c819e59e94bb37a2a253c228f83921136ff4a7aa1a178c7cce5422",
-    "zh:aa9015926cd152425dbf86d1abdbc74bfe0e1ba3d26b3db35051d7b9ca9f72ae",
-    "zh:bb04798b016e1e1d49bcc76d62c53b56c88c63d6f2dfe38821afef17c416a0e1",
-    "zh:c23084e1b23577de22603cff752e59128d83cfecc2e6819edadd8cf7a10af11e",
+    "h1:sSmqhBjr3FCay0NKUVdHMsGrLnDaKG6rbXehUhcYizo=",
+    "zh:1bc943abe35326113b6057f2055a5aa71d20fe86bc74707a40c01dd5b8551a78",
+    "zh:3f314718579c1c84936f730dcc61f6ed2ed5e004ded7357c83f2559feb72dfc7",
+    "zh:5e1a9096b6f9fdf32e8178734125c130827323f06a6f02b16f154ba22ff5a947",
+    "zh:735a393511922cafe9042ce7be45c77423eefee47fe917bf172ee86c6f34a4e4",
+    "zh:7c3a66ab19cd0b0dd278997b09bd443e582ce2a9797b76f6b661c2ea6194318a",
+    "zh:bfb99d582514e62bb2215b99097369ff7742ab5b916af0b1fdefdb3414a4de06",
   ]
 }
