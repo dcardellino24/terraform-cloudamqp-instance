@@ -1,26 +1,32 @@
-terraform {
-  required_providers {
-    null = {
-      source  = "hashicorp/null"
-      version = ">= 3.1.1"
+resource "cloudamqp_instance" "instance" {
+  name                = var.name
+  plan                = var.plan
+  region              = var.region
+  tags                = concat(var.tags, ["terraform"])
+  rmq_version         = var.rmq_version
+  vpc_id              = var.vpc_id
+  no_default_alarms   = var.no_default_alarms
+  keep_associated_vpc = var.keep_associated_vpc
+}
+
+resource "cloudamqp_security_firewall" "firewall_settings" {
+  count       = var.firewall_enabled ? 1 : 0
+  instance_id = cloudamqp_instance.instance.id
+
+  rules {
+    description = "rabbitmq console"
+    ip          = "0.0.0.0/0"
+    ports       = []
+    services    = ["HTTPS"]
+  }
+
+  dynamic "rules" {
+    for_each = var.fw_rules
+    content {
+      ip          = rules.value.ip
+      ports       = lookup(rules.value, "ports", [])
+      services    = rules.value.services
+      description = lookup(rules.value, "description", "")
     }
   }
-  required_version = ">= 1.2.4"
-}
-
-provider "null" {}
-
-variable "foo" {
-  description = "Some data to store as an output of this module"
-  type        = string
-}
-
-resource "null_resource" "cluster" {
-  triggers = {
-    foo = var.foo
-  }
-}
-
-output "foo" {
-  value = var.foo
 }
