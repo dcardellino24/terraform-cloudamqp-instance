@@ -1,5 +1,11 @@
-name: Test Terraform Modules with terratest
+name: Terratest
+
 on: push
+
+env:
+  TF_IN_AUTOMATION: "True"
+  CLOUDAMQP_APIKEY: ${{ secrets.CLOUDAMQP_APIKEY }}
+
 jobs:
   context:
     runs-on: ubuntu-latest
