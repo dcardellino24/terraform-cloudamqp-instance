@@ -10,11 +10,12 @@ resource "cloudamqp_instance" "instance" {
 }
 
 resource "cloudamqp_security_firewall" "firewall_settings" {
-  count       = var.firewall_enabled ? 1 : 0
+  count = var.firewall_enabled ? 1 : 0
+
   instance_id = cloudamqp_instance.instance.id
 
   rules {
-    description = "rabbitmq console"
+    description = "Rabbitmq Console"
     ip          = "0.0.0.0/0"
     ports       = []
     services    = ["HTTPS"]
@@ -30,3 +31,4 @@ resource "cloudamqp_security_firewall" "firewall_settings" {
     }
   }
 }
+
