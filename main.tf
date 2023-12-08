@@ -15,7 +15,7 @@ resource "cloudamqp_security_firewall" "firewall_settings" {
   instance_id = cloudamqp_instance.instance.id
 
   rules {
-    description = "rabbitmq console"
+    description = "Rabbitmq Console"
     ip          = "0.0.0.0/0"
     ports       = []
     services    = ["HTTPS"]
